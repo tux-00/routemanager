@@ -2,11 +2,12 @@
 Manage routes to deal with overlapping networks.
 
 ## Use case
-When you need connections to multiple clients/networks, sometimes are trying to access a network that is already taken by another 
+Suppose you need to connect to multiple clients/networks configured with the same network IP for any reason.
+This app provide a way to easily change routes to switch between different clients/networks.
 
 routemanager provide a way to easily manage routes.
 
-**Warning:** as routemanager is changing routes, be warefull with this app.
+**Warning:** as routemanager is changing routes, be carefull with this app.
 
 ## Installation
 ```
