@@ -1,6 +1,13 @@
 # routemanager
 Manage routes to deal with overlapping networks.
 
+## Use case
+When you need connections to multiple clients/networks, sometimes are trying to access a network that is already taken by another 
+
+routemanager provide a way to easily manage routes.
+
+**Warning:** as routemanager is changing routes, be warefull with this app.
+
 ## Installation
 ```
 virtualenv -p python3 env
@@ -18,3 +25,4 @@ Open the file `routemanager/routemanager/routemanager.py` and edit the *app.conf
 To run the app just type `routemanager` in your terminal.
 
 **Warning:** the app is by default in debug mode.
+
