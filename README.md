@@ -15,6 +15,6 @@ Open the file `routemanager/routemanager/routemanager.py` and edit the *app.conf
 *IF_VPN* is the most important configuration, you need to provide the name of the interface to manage. If the interface doesn't exist, the app will raise an exception.
 
 ## Run
-`routemanager`
+To run the app just type `routemanager` in your terminal.
 
-**Warning:** debug mode by default!
+**Warning:** the app is by default in debug mode.
