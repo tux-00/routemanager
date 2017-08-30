@@ -8,3 +8,8 @@ source env/bin/activate
 pip3 install -r requirements.txt
 pip3 install --editable .
 ```
+
+## Run
+`routemanager`
+
+**Warning:** debug mode by default!
