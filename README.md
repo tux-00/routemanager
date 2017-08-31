@@ -26,3 +26,11 @@ Open the file `routemanager/routemanager/routemanager.py` and edit the *app.conf
 To run the app just type `routemanager` in your terminal.
 
 **Warning:** by default the app is in debug mode and listen on `0.0.0.0`.
+
+Edit `bin/routemanager` to change listen address and debug option.
+
+## Reset database
+```
+export FLASK_APP=routemanager
+flask initdb
+```
