@@ -1,0 +1,3 @@
+graft routemanager/templates
+graft routemanager/static
+include routemanager/database/schema.sql
