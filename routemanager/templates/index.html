@@ -1,0 +1,62 @@
+{% extends "layout.html" %} {% block tiles %}
+<div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+    <span class="count_top"><i class="glyphicon glyphicon-time"></i> Days of uptime</span>
+    <div class="count">{{ tiles['days_uptime'] }}</div>
+</div>
+<div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+    <span class="count_top"><i class="glyphicon glyphicon-user"></i> Total Clients</span>
+    <div class="count">{{ tiles['total_clients'] }}</div>
+</div>
+<div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+    <span class="count_top"><i class="glyphicon glyphicon-user"></i> Activated Clients</span>
+    <div class="count green">{{ tiles['active_clients'] }}</div>
+</div>
+<div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+    <span class="count_top"><i class="glyphicon glyphicon-chevron-down"></i> Network Rx</span>
+    <div class="count">{{ tiles['network_rx'] }}</div>
+</div>
+<div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+    <span class="count_top"><i class="glyphicon glyphicon-chevron-up"></i> Network Tx</span>
+    <div class="count">{{ tiles['network_tx'] }}</div>
+</div>
+<div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+    <span class="count_top"><i class="glyphicon glyphicon-tasks"></i> RAM</span>
+    <div class="count">{{ tiles['percent_ram'] }}%</div>
+</div>
+{% endblock %} {% block main %}
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>Enabled</th>
+                    <th>Client</th>
+                    <th>IP VPN</th>
+                    <th>Subnet Client</th>
+                    <th>Date Added</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in clients %}
+                <tr>
+                    <td><input type="checkbox" {% if c.status==1 %}checked{% endif %} id="{{ c.id }}" /></td>
+                    <td>{{ c.display_name }}</td>
+                    <td>{{ c.static_vpn_ip }}</td>
+                    <td>{{ c.lan_subnet }}/{{ c.lan_subnet_len }}</td>
+                    <td>{{ c.date_added }}</td>
+                </tr>
+                {% endfor %}
+                <form id="add_client" method="post" action="{{ request.path }}">
+                    <tr>
+                        <td><input type="checkbox" disabled /></td>
+                        <td><input name="display_name" type="text" class="form-control input-sm" placeholder="Example" maxlength="30" required /></td>
+                        <td><input name="static_vpn_ip" type="text" class="form-control input-sm" placeholder="10.64.0.1" required /></td>
+                        <td><input name="client_subnet" type="text" class="form-control input-sm" placeholder="192.168.0.0/24" maxlength="18" required /></td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+        <button class="btn btn-primary" type="submit" form="add_client">Add client</button>
+    </div>
+</div>
+{% endblock %}
