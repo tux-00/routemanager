@@ -25,5 +25,4 @@ Open the file `routemanager/routemanager/routemanager.py` and edit the *app.conf
 ## Run
 To run the app just type `routemanager` in your terminal.
 
-**Warning:** the app is by default in debug mode.
-
+**Warning:** by default the app is in debug mode and listen on `0.0.0.0`.
