@@ -1,4 +1,6 @@
 # routemanager
+[![Known Vulnerabilities](https://snyk.io/test/github/tux-00/routemanager/badge.svg)](https://snyk.io/test/github/tux-00/routemanager)
+
 Manage routes to deal with overlapping networks.
 
 ![Imgur](http://i.imgur.com/Eui2PMa.png)
